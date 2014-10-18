@@ -4,4 +4,4 @@ before_install:
   - cd Example
 
 xcode_project: SampleProject.xcodeproj
-xcode_scheme: SampleProjectTests
+xcode_scheme: SampleProject
