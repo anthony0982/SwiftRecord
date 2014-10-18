@@ -3,6 +3,5 @@ language: swift
 before_install:
   - cd Example
 
-install: make install
-
-script: make ci
+xcode_project: SampleProject.xcodeproj
+xcode_scheme: SampleProjectTests
