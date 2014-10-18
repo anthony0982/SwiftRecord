@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  ViewController.swift
 //  SampleProject
 //
 // The MIT License (MIT)
@@ -29,16 +29,20 @@
 //
 
 import Cocoa
+import CoreData
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class ViewController: NSViewController {
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+    override var representedObject: AnyObject? {
+        didSet {
+        // Update the view, if already loaded.
+        }
     }
 
 

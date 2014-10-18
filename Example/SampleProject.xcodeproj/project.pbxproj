@@ -7,62 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DF74DD119F2C6FB00584764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DD019F2C6FB00584764 /* AppDelegate.swift */; };
-		3DF74DDB19F2C6FB00584764 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF74DDA19F2C6FB00584764 /* Images.xcassets */; };
-		3DF74DF519F2C86500584764 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DF419F2C86500584764 /* Person.swift */; };
-		3DF74DF819F2C98600584764 /* SampleProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DF619F2C98600584764 /* SampleProject.xcdatamodeld */; };
-		3DF74E0119F2CA9B00584764 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DFC19F2CA9B00584764 /* CoreDataManager.swift */; };
-		3DF74E0219F2CA9B00584764 /* ManagedObjectActiveRecordExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DFD19F2CA9B00584764 /* ManagedObjectActiveRecordExtensions.swift */; };
-		3DF74E0319F2CA9B00584764 /* ManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DFE19F2CA9B00584764 /* ManagedObjectContextExtensions.swift */; };
-		3DF74E0419F2CA9B00584764 /* ManagedObjectMappingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74DFF19F2CA9B00584764 /* ManagedObjectMappingsExtensions.swift */; };
-		3DF74E0519F2CA9B00584764 /* SwiftRecordUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74E0019F2CA9B00584764 /* SwiftRecordUtils.swift */; };
-		3DF74E0719F2CAB800584764 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF74E0619F2CAB800584764 /* CoreData.framework */; };
-		3DF74E0C19F2CC2300584764 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74E0919F2CC2300584764 /* CoreDataManagerTests.swift */; };
-		3DF74E0D19F2CC2300584764 /* FindersAndCreatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74E0A19F2CC2300584764 /* FindersAndCreatorsTests.swift */; };
-		3DF74E0E19F2CC2300584764 /* SwiftRecordUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF74E0B19F2CC2300584764 /* SwiftRecordUtilsTests.swift */; };
+		3DC889B819F2DB8100891750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889B719F2DB8100891750 /* AppDelegate.swift */; };
+		3DC889BA19F2DB8100891750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889B919F2DB8100891750 /* ViewController.swift */; };
+		3DC889BC19F2DB8100891750 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC889BB19F2DB8100891750 /* Images.xcassets */; };
+		3DC889BF19F2DB8100891750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC889BD19F2DB8100891750 /* Main.storyboard */; };
+		3DC889E519F2DBDC00891750 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E019F2DBDC00891750 /* CoreDataManager.swift */; };
+		3DC889E619F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E119F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift */; };
+		3DC889E719F2DBDC00891750 /* ManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E219F2DBDC00891750 /* ManagedObjectContextExtensions.swift */; };
+		3DC889E819F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E319F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift */; };
+		3DC889E919F2DBDC00891750 /* SwiftRecordUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E419F2DBDC00891750 /* SwiftRecordUtils.swift */; };
+		3DC889EE19F2DBED00891750 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */; };
+		3DC889EF19F2DBED00891750 /* FindersAndCreatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */; };
+		3DC889F019F2DBED00891750 /* SwiftRecordUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */; };
+		3DC889F619F2DC2B00891750 /* SampleProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889F419F2DC2B00891750 /* SampleProject.xcdatamodeld */; };
+		3DC889F719F2DDA000891750 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889F219F2DC1000891750 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3DF74DE419F2C6FB00584764 /* PBXContainerItemProxy */ = {
+		3DC889C519F2DB8200891750 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3DF74DC319F2C6FB00584764 /* Project object */;
+			containerPortal = 3DC889AA19F2DB8100891750 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3DF74DCA19F2C6FB00584764;
+			remoteGlobalIDString = 3DC889B119F2DB8100891750;
 			remoteInfo = SampleProject;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3DF74DCB19F2C6FB00584764 /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DF74DCF19F2C6FB00584764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DF74DD019F2C6FB00584764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3DF74DDA19F2C6FB00584764 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3DF74DE319F2C6FB00584764 /* SampleProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DF74DE819F2C6FB00584764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DF74DF419F2C86500584764 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		3DF74DF719F2C98600584764 /* SampleProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleProject.xcdatamodel; sourceTree = "<group>"; };
-		3DF74DFC19F2CA9B00584764 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		3DF74DFD19F2CA9B00584764 /* ManagedObjectActiveRecordExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectActiveRecordExtensions.swift; sourceTree = "<group>"; };
-		3DF74DFE19F2CA9B00584764 /* ManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
-		3DF74DFF19F2CA9B00584764 /* ManagedObjectMappingsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectMappingsExtensions.swift; sourceTree = "<group>"; };
-		3DF74E0019F2CA9B00584764 /* SwiftRecordUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordUtils.swift; sourceTree = "<group>"; };
-		3DF74E0619F2CAB800584764 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		3DF74E0819F2CC2200584764 /* SampleProjectTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleProjectTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		3DF74E0919F2CC2300584764 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
-		3DF74E0A19F2CC2300584764 /* FindersAndCreatorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindersAndCreatorsTests.swift; sourceTree = "<group>"; };
-		3DF74E0B19F2CC2300584764 /* SwiftRecordUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordUtilsTests.swift; sourceTree = "<group>"; };
+		3DC889B219F2DB8100891750 /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DC889B619F2DB8100891750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DC889B719F2DB8100891750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DC889B919F2DB8100891750 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DC889BB19F2DB8100891750 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3DC889BE19F2DB8100891750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DC889C419F2DB8200891750 /* SampleProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DC889C919F2DB8200891750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DC889E019F2DBDC00891750 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3DC889E119F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectActiveRecordExtensions.swift; sourceTree = "<group>"; };
+		3DC889E219F2DBDC00891750 /* ManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
+		3DC889E319F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectMappingsExtensions.swift; sourceTree = "<group>"; };
+		3DC889E419F2DBDC00891750 /* SwiftRecordUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordUtils.swift; sourceTree = "<group>"; };
+		3DC889EA19F2DBED00891750 /* SampleProjectTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleProjectTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
+		3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindersAndCreatorsTests.swift; sourceTree = "<group>"; };
+		3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordUtilsTests.swift; sourceTree = "<group>"; };
+		3DC889F219F2DC1000891750 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3DC889F519F2DC2B00891750 /* SampleProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleProject.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3DF74DC819F2C6FB00584764 /* Frameworks */ = {
+		3DC889AF19F2DB8100891750 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF74E0719F2CAB800584764 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DF74DE019F2C6FB00584764 /* Frameworks */ = {
+		3DC889C119F2DB8200891750 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,97 +73,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DF74DC219F2C6FB00584764 = {
+		3DC889A919F2DB8100891750 = {
 			isa = PBXGroup;
 			children = (
-				3DF74E0619F2CAB800584764 /* CoreData.framework */,
-				3DF74DFB19F2CA9B00584764 /* Classes */,
-				3DF74DCD19F2C6FB00584764 /* SampleProject */,
-				3DF74DE619F2C6FB00584764 /* SampleProjectTests */,
-				3DF74DCC19F2C6FB00584764 /* Products */,
+				3DC889B419F2DB8100891750 /* SampleProject */,
+				3DC889C719F2DB8200891750 /* SampleProjectTests */,
+				3DC889B319F2DB8100891750 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3DF74DCC19F2C6FB00584764 /* Products */ = {
+		3DC889B319F2DB8100891750 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DF74DCB19F2C6FB00584764 /* SampleProject.app */,
-				3DF74DE319F2C6FB00584764 /* SampleProjectTests.xctest */,
+				3DC889B219F2DB8100891750 /* SampleProject.app */,
+				3DC889C419F2DB8200891750 /* SampleProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3DF74DCD19F2C6FB00584764 /* SampleProject */ = {
+		3DC889B419F2DB8100891750 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				3DF74DD019F2C6FB00584764 /* AppDelegate.swift */,
-				3DF74DDA19F2C6FB00584764 /* Images.xcassets */,
-				3DF74DF319F2C86500584764 /* Models */,
-				3DF74DF619F2C98600584764 /* SampleProject.xcdatamodeld */,
-				3DF74DCE19F2C6FB00584764 /* Supporting Files */,
+				3DC889DF19F2DBDC00891750 /* Classes */,
+				3DC889B719F2DB8100891750 /* AppDelegate.swift */,
+				3DC889B919F2DB8100891750 /* ViewController.swift */,
+				3DC889BB19F2DB8100891750 /* Images.xcassets */,
+				3DC889BD19F2DB8100891750 /* Main.storyboard */,
+				3DC889F419F2DC2B00891750 /* SampleProject.xcdatamodeld */,
+				3DC889F119F2DC1000891750 /* Models */,
+				3DC889B519F2DB8100891750 /* Supporting Files */,
 			);
 			path = SampleProject;
 			sourceTree = "<group>";
 		};
-		3DF74DCE19F2C6FB00584764 /* Supporting Files */ = {
+		3DC889B519F2DB8100891750 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3DF74DCF19F2C6FB00584764 /* Info.plist */,
+				3DC889B619F2DB8100891750 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3DF74DE619F2C6FB00584764 /* SampleProjectTests */ = {
+		3DC889C719F2DB8200891750 /* SampleProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				3DF74E0919F2CC2300584764 /* CoreDataManagerTests.swift */,
-				3DF74E0A19F2CC2300584764 /* FindersAndCreatorsTests.swift */,
-				3DF74E0B19F2CC2300584764 /* SwiftRecordUtilsTests.swift */,
-				3DF74DE719F2C6FB00584764 /* Supporting Files */,
-				3DF74E0819F2CC2200584764 /* SampleProjectTests-Bridging-Header.h */,
+				3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */,
+				3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */,
+				3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */,
+				3DC889C819F2DB8200891750 /* Supporting Files */,
+				3DC889EA19F2DBED00891750 /* SampleProjectTests-Bridging-Header.h */,
 			);
 			path = SampleProjectTests;
 			sourceTree = "<group>";
 		};
-		3DF74DE719F2C6FB00584764 /* Supporting Files */ = {
+		3DC889C819F2DB8200891750 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3DF74DE819F2C6FB00584764 /* Info.plist */,
+				3DC889C919F2DB8200891750 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3DF74DF319F2C86500584764 /* Models */ = {
+		3DC889DF19F2DBDC00891750 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3DF74DF419F2C86500584764 /* Person.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3DF74DFB19F2CA9B00584764 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				3DF74DFC19F2CA9B00584764 /* CoreDataManager.swift */,
-				3DF74DFD19F2CA9B00584764 /* ManagedObjectActiveRecordExtensions.swift */,
-				3DF74DFE19F2CA9B00584764 /* ManagedObjectContextExtensions.swift */,
-				3DF74DFF19F2CA9B00584764 /* ManagedObjectMappingsExtensions.swift */,
-				3DF74E0019F2CA9B00584764 /* SwiftRecordUtils.swift */,
+				3DC889E019F2DBDC00891750 /* CoreDataManager.swift */,
+				3DC889E119F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift */,
+				3DC889E219F2DBDC00891750 /* ManagedObjectContextExtensions.swift */,
+				3DC889E319F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift */,
+				3DC889E419F2DBDC00891750 /* SwiftRecordUtils.swift */,
 			);
 			name = Classes;
-			path = ../Classes;
+			path = ../../Classes;
+			sourceTree = "<group>";
+		};
+		3DC889F119F2DC1000891750 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3DC889F219F2DC1000891750 /* Person.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3DF74DCA19F2C6FB00584764 /* SampleProject */ = {
+		3DC889B119F2DB8100891750 /* SampleProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DF74DED19F2C6FB00584764 /* Build configuration list for PBXNativeTarget "SampleProject" */;
+			buildConfigurationList = 3DC889CE19F2DB8200891750 /* Build configuration list for PBXNativeTarget "SampleProject" */;
 			buildPhases = (
-				3DF74DC719F2C6FB00584764 /* Sources */,
-				3DF74DC819F2C6FB00584764 /* Frameworks */,
-				3DF74DC919F2C6FB00584764 /* Resources */,
+				3DC889AE19F2DB8100891750 /* Sources */,
+				3DC889AF19F2DB8100891750 /* Frameworks */,
+				3DC889B019F2DB8100891750 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -170,46 +172,46 @@
 			);
 			name = SampleProject;
 			productName = SampleProject;
-			productReference = 3DF74DCB19F2C6FB00584764 /* SampleProject.app */;
+			productReference = 3DC889B219F2DB8100891750 /* SampleProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3DF74DE219F2C6FB00584764 /* SampleProjectTests */ = {
+		3DC889C319F2DB8200891750 /* SampleProjectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DF74DF019F2C6FB00584764 /* Build configuration list for PBXNativeTarget "SampleProjectTests" */;
+			buildConfigurationList = 3DC889D119F2DB8200891750 /* Build configuration list for PBXNativeTarget "SampleProjectTests" */;
 			buildPhases = (
-				3DF74DDF19F2C6FB00584764 /* Sources */,
-				3DF74DE019F2C6FB00584764 /* Frameworks */,
-				3DF74DE119F2C6FB00584764 /* Resources */,
+				3DC889C019F2DB8200891750 /* Sources */,
+				3DC889C119F2DB8200891750 /* Frameworks */,
+				3DC889C219F2DB8200891750 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3DF74DE519F2C6FB00584764 /* PBXTargetDependency */,
+				3DC889C619F2DB8200891750 /* PBXTargetDependency */,
 			);
 			name = SampleProjectTests;
 			productName = SampleProjectTests;
-			productReference = 3DF74DE319F2C6FB00584764 /* SampleProjectTests.xctest */;
+			productReference = 3DC889C419F2DB8200891750 /* SampleProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3DF74DC319F2C6FB00584764 /* Project object */ = {
+		3DC889AA19F2DB8100891750 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Damien Glancy";
 				TargetAttributes = {
-					3DF74DCA19F2C6FB00584764 = {
+					3DC889B119F2DB8100891750 = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					3DF74DE219F2C6FB00584764 = {
+					3DC889C319F2DB8200891750 = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 3DF74DCA19F2C6FB00584764;
+						TestTargetID = 3DC889B119F2DB8100891750;
 					};
 				};
 			};
-			buildConfigurationList = 3DF74DC619F2C6FB00584764 /* Build configuration list for PBXProject "SampleProject" */;
+			buildConfigurationList = 3DC889AD19F2DB8100891750 /* Build configuration list for PBXProject "SampleProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,27 +219,28 @@
 				en,
 				Base,
 			);
-			mainGroup = 3DF74DC219F2C6FB00584764;
-			productRefGroup = 3DF74DCC19F2C6FB00584764 /* Products */;
+			mainGroup = 3DC889A919F2DB8100891750;
+			productRefGroup = 3DC889B319F2DB8100891750 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3DF74DCA19F2C6FB00584764 /* SampleProject */,
-				3DF74DE219F2C6FB00584764 /* SampleProjectTests */,
+				3DC889B119F2DB8100891750 /* SampleProject */,
+				3DC889C319F2DB8200891750 /* SampleProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3DF74DC919F2C6FB00584764 /* Resources */ = {
+		3DC889B019F2DB8100891750 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF74DDB19F2C6FB00584764 /* Images.xcassets in Resources */,
+				3DC889BC19F2DB8100891750 /* Images.xcassets in Resources */,
+				3DC889BF19F2DB8100891750 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DF74DE119F2C6FB00584764 /* Resources */ = {
+		3DC889C219F2DB8200891750 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,43 +250,55 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3DF74DC719F2C6FB00584764 /* Sources */ = {
+		3DC889AE19F2DB8100891750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF74E0319F2CA9B00584764 /* ManagedObjectContextExtensions.swift in Sources */,
-				3DF74DD119F2C6FB00584764 /* AppDelegate.swift in Sources */,
-				3DF74E0219F2CA9B00584764 /* ManagedObjectActiveRecordExtensions.swift in Sources */,
-				3DF74E0419F2CA9B00584764 /* ManagedObjectMappingsExtensions.swift in Sources */,
-				3DF74DF519F2C86500584764 /* Person.swift in Sources */,
-				3DF74E0119F2CA9B00584764 /* CoreDataManager.swift in Sources */,
-				3DF74E0519F2CA9B00584764 /* SwiftRecordUtils.swift in Sources */,
-				3DF74DF819F2C98600584764 /* SampleProject.xcdatamodeld in Sources */,
+				3DC889E719F2DBDC00891750 /* ManagedObjectContextExtensions.swift in Sources */,
+				3DC889E519F2DBDC00891750 /* CoreDataManager.swift in Sources */,
+				3DC889BA19F2DB8100891750 /* ViewController.swift in Sources */,
+				3DC889F619F2DC2B00891750 /* SampleProject.xcdatamodeld in Sources */,
+				3DC889B819F2DB8100891750 /* AppDelegate.swift in Sources */,
+				3DC889E619F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift in Sources */,
+				3DC889F719F2DDA000891750 /* Person.swift in Sources */,
+				3DC889E819F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift in Sources */,
+				3DC889E919F2DBDC00891750 /* SwiftRecordUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DF74DDF19F2C6FB00584764 /* Sources */ = {
+		3DC889C019F2DB8200891750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF74E0D19F2CC2300584764 /* FindersAndCreatorsTests.swift in Sources */,
-				3DF74E0E19F2CC2300584764 /* SwiftRecordUtilsTests.swift in Sources */,
-				3DF74E0C19F2CC2300584764 /* CoreDataManagerTests.swift in Sources */,
+				3DC889EF19F2DBED00891750 /* FindersAndCreatorsTests.swift in Sources */,
+				3DC889F019F2DBED00891750 /* SwiftRecordUtilsTests.swift in Sources */,
+				3DC889EE19F2DBED00891750 /* CoreDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3DF74DE519F2C6FB00584764 /* PBXTargetDependency */ = {
+		3DC889C619F2DB8200891750 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3DF74DCA19F2C6FB00584764 /* SampleProject */;
-			targetProxy = 3DF74DE419F2C6FB00584764 /* PBXContainerItemProxy */;
+			target = 3DC889B119F2DB8100891750 /* SampleProject */;
+			targetProxy = 3DC889C519F2DB8200891750 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		3DC889BD19F2DB8100891750 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DC889BE19F2DB8100891750 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		3DF74DEB19F2C6FB00584764 /* Debug */ = {
+		3DC889CC19F2DB8200891750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -300,7 +315,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -317,15 +332,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		3DF74DEC19F2C6FB00584764 /* Release */ = {
+		3DC889CD19F2DB8200891750 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -342,8 +357,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -353,44 +369,42 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		3DF74DEE19F2C6FB00584764 /* Debug */ = {
+		3DC889CF19F2DB8200891750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SampleProject/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		3DF74DEF19F2C6FB00584764 /* Release */ = {
+		3DC889D019F2DB8200891750 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SampleProject/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		3DF74DF119F2C6FB00584764 /* Debug */ = {
+		3DC889D219F2DB8200891750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -398,57 +412,58 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SampleProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SampleProjectTests/SampleProjectTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleProject.app/SampleProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleProject.app/Contents/MacOS/SampleProject";
 			};
 			name = Debug;
 		};
-		3DF74DF219F2C6FB00584764 /* Release */ = {
+		3DC889D319F2DB8200891750 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SampleProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SampleProjectTests/SampleProjectTests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleProject.app/SampleProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleProject.app/Contents/MacOS/SampleProject";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3DF74DC619F2C6FB00584764 /* Build configuration list for PBXProject "SampleProject" */ = {
+		3DC889AD19F2DB8100891750 /* Build configuration list for PBXProject "SampleProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3DF74DEB19F2C6FB00584764 /* Debug */,
-				3DF74DEC19F2C6FB00584764 /* Release */,
+				3DC889CC19F2DB8200891750 /* Debug */,
+				3DC889CD19F2DB8200891750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DF74DED19F2C6FB00584764 /* Build configuration list for PBXNativeTarget "SampleProject" */ = {
+		3DC889CE19F2DB8200891750 /* Build configuration list for PBXNativeTarget "SampleProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3DF74DEE19F2C6FB00584764 /* Debug */,
-				3DF74DEF19F2C6FB00584764 /* Release */,
+				3DC889CF19F2DB8200891750 /* Debug */,
+				3DC889D019F2DB8200891750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DF74DF019F2C6FB00584764 /* Build configuration list for PBXNativeTarget "SampleProjectTests" */ = {
+		3DC889D119F2DB8200891750 /* Build configuration list for PBXNativeTarget "SampleProjectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3DF74DF119F2C6FB00584764 /* Debug */,
-				3DF74DF219F2C6FB00584764 /* Release */,
+				3DC889D219F2DB8200891750 /* Debug */,
+				3DC889D319F2DB8200891750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -456,17 +471,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3DF74DF619F2C98600584764 /* SampleProject.xcdatamodeld */ = {
+		3DC889F419F2DC2B00891750 /* SampleProject.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3DF74DF719F2C98600584764 /* SampleProject.xcdatamodel */,
+				3DC889F519F2DC2B00891750 /* SampleProject.xcdatamodel */,
 			);
-			currentVersion = 3DF74DF719F2C98600584764 /* SampleProject.xcdatamodel */;
+			currentVersion = 3DC889F519F2DC2B00891750 /* SampleProject.xcdatamodel */;
 			path = SampleProject.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 3DF74DC319F2C6FB00584764 /* Project object */;
+	rootObject = 3DC889AA19F2DB8100891750 /* Project object */;
 }
