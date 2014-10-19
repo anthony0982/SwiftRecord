@@ -3,9 +3,9 @@
 [ci-bdg]: https://travis-ci.org/dglancy/SwiftRecord.svg
 [ci]: https://travis-ci.org/dglancy/SwiftRecord
 
-SwiftRecord is a lightweight ActiveRecord way of interacting with Core Data objects. Its a Swift port of the objective-c based [ObjectiveRecord](https://github.com/supermarin/ObjectiveRecord) library
+SwiftRecord is a lightweight ActiveRecord way of interacting with Core Data objects.
 
-Its easy to get up and running with. No AppDelegate code required. Fully tested using Apple's XCTest framework.
+Its easy to get up and running with no AppDelegate code required. Fully tested using Apple's XCTest framework.
 
 #### Usage
 
@@ -21,3 +21,7 @@ john.save()
 john.delete()
 
 ```
+
+#### Origins
+
+SwiftRecord is a port of the objective-c based [ObjectiveRecord](https://github.com/supermarin/ObjectiveRecord) library for Swift

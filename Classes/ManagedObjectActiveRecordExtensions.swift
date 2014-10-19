@@ -33,6 +33,12 @@ import CoreData
 
 extension NSManagedObject {
     //MARK: - Create
+
+//    convenience init(damo: String) {
+//        let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: NSManagedObjectContext.defaultContext)
+//        self.init(entity: entity!, insertIntoManagedObjectContext: NSManagedObjectContext.defaultContext)
+//    }
+    
     public class func create() -> AnyObject! {
         return createInContext(NSManagedObjectContext.defaultContext)
     }

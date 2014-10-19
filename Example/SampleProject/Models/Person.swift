@@ -35,5 +35,5 @@ public class Person: NSManagedObject {
 
     @NSManaged var name: String
     @NSManaged var dateOfBirth: NSDate
-
+    
 }

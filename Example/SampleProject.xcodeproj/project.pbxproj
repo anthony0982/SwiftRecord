@@ -120,8 +120,8 @@
 				3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */,
 				3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */,
 				3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */,
-				3DC889C819F2DB8200891750 /* Supporting Files */,
 				3DC889EA19F2DBED00891750 /* SampleProjectTests-Bridging-Header.h */,
+				3DC889C819F2DB8200891750 /* Supporting Files */,
 			);
 			path = SampleProjectTests;
 			sourceTree = "<group>";
