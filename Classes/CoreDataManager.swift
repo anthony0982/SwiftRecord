@@ -41,16 +41,16 @@ public class CoreDataManager: Equatable {
     }
     
     //MARK: - Public Properties
-    public lazy var managedObjectModel: NSManagedObjectModel! = {
+    public lazy var managedObjectModel: NSManagedObjectModel? = {
         let modelURL = NSBundle(forClass: CoreDataManager.self).URLForResource(self.modelName, withExtension: "momd")
         return NSManagedObjectModel(contentsOfURL: modelURL!)!
     }()
     
-    public lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator! = {
+    public lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         return self.createPersistentStoreCoordinator(NSSQLiteStoreType, storeURL: self.sqliteStoreURL)
     }()
     
-    public lazy var managedObjectContext: NSManagedObjectContext! = {
+    public lazy var managedObjectContext: NSManagedObjectContext? = {
         let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
         context.persistentStoreCoordinator = self.persistentStoreCoordinator
         return context
@@ -60,12 +60,12 @@ public class CoreDataManager: Equatable {
     public func deleteStoreAndResetManager() {
         NSFileManager.defaultManager().removeItemAtURL(self.sqliteStoreURL, error: nil)
         #if DEBUG
-            NSLog("[SwiftRecord] Removed SQL store at \(self.sqliteStoreURL)")
+            println("[SwiftRecord] Removed SQL store at \(self.sqliteStoreURL)")
         #endif
         
         CoreDataManager.manager.persistentStoreCoordinator = self.createPersistentStoreCoordinator(NSSQLiteStoreType, storeURL: self.sqliteStoreURL)
         #if DEBUG
-            NSLog("[SwiftRecord] Re-created SQL store at \(self.sqliteStoreURL)")
+            println("[SwiftRecord] Re-created SQL store at \(self.sqliteStoreURL)")
         #endif
         
         let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
@@ -85,7 +85,7 @@ public class CoreDataManager: Equatable {
                 var error: NSError?
                 result = context.save(&error)
                 if let localError = error {
-                    NSLog("[SwiftRecord] Unresolved error in saving context: \(localError), \(localError.userInfo)")
+                    println("[SwiftRecord] Unresolved error in saving context: \(localError), \(localError.userInfo)")
                 }
             }
         }
@@ -112,7 +112,7 @@ public class CoreDataManager: Equatable {
         let url = directory.URLByAppendingPathComponent(self.databaseName)
         
         #if DEBUG
-            NSLOG("[SWIFTRECORD] store url = \(url)")
+            println("[SWIFTRECORD] store url = \(url)")
         #endif
         
         return url
@@ -126,7 +126,7 @@ public class CoreDataManager: Equatable {
         var error: NSError?
         coordinator.addPersistentStoreWithType(storeType, configuration: nil, URL: storeURL, options: options, error: &error)
         if let localError = error {
-            NSLog("[SWIFTRECORD] Error creating persistent store coordinator: \(localError), \(localError.userInfo)")
+            println("[SWIFTRECORD] Error creating persistent store coordinator: \(localError), \(localError.userInfo)")
         }
         
         return coordinator

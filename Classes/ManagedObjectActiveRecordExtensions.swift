@@ -33,12 +33,12 @@ import CoreData
 
 extension NSManagedObject {
     //MARK: - Create
-    public class func create() -> AnyObject! {
+    public class func create() -> AnyObject? {
         return createInContext(NSManagedObjectContext.defaultContext)
     }
     
     public class func createInContext(context: NSManagedObjectContext) -> AnyObject! {
-        return NSEntityDescription.insertNewObjectForEntityForName(self.entityName, inManagedObjectContext: context)
+        return NSEntityDescription.insertNewObjectForEntityForName(self.entityName!, inManagedObjectContext: context)
     }
     
     public class func create(attributes: Dictionary<String, AnyObject>!, context: NSManagedObjectContext) -> AnyObject! {
@@ -67,7 +67,7 @@ extension NSManagedObject {
     }
     
     public class func deleteAllInContext(context: NSManagedObjectContext) {
-        for object in allInContext(context) {
+        for object in allInContext(context)! {
             object.delete()
         }
     }
@@ -75,19 +75,19 @@ extension NSManagedObject {
     //MARK: - Finders
     
     //MARK: All
-    public class func all() -> Array<AnyObject>! {
+    public class func all() -> Array<AnyObject>? {
         return allInContext(NSManagedObjectContext.defaultContext)
     }
     
-    public class func allWithOrder(order: AnyObject) -> Array<AnyObject>! {
+    public class func allWithOrder(order: AnyObject) -> Array<AnyObject>? {
         return allInContext(NSManagedObjectContext.defaultContext, order: order)
     }
     
-    public class func allInContext(context: NSManagedObjectContext) -> Array<AnyObject>! {
+    public class func allInContext(context: NSManagedObjectContext) -> Array<AnyObject>? {
         return allInContext(context, order: nil)
     }
     
-    public class func allInContext(context: NSManagedObjectContext, order: AnyObject!) -> Array<AnyObject>! {
+    public class func allInContext(context: NSManagedObjectContext, order: AnyObject!) -> Array<AnyObject>? {
         return fetch(nil, context: context, order: order, limit: nil)
     }
 
@@ -97,7 +97,16 @@ extension NSManagedObject {
 //    }
     
     //MARK: Where
+//    public class func where(condition: AnyObject, inContext: NSManagedObjectContext, order: AnyObject, limit: Int) -> Array<AnyObject>! {
+//        return fetch
+//    }
     
+    /*
+
+    + (NSArray *)where:(id)condition inContext:(NSManagedObjectContext *)context order:(id)order limit:(NSNumber *)limit {
+    return [self fetchWithCondition:condition inContext:context withOrder:order fetchLimit:limit];
+    }
+*/
     //MARK: Count
     public class func count() -> Int {
         return countInContext(NSManagedObjectContext.defaultContext)
@@ -119,7 +128,7 @@ extension NSManagedObject {
     }
     
     //MARK: - Naming
-    public class var entityName: String! {
+    public class var entityName: String? {
         get {
             var classString = NSStringFromClass(self)
             let range = classString.rangeOfString(".", options: NSStringCompareOptions.CaseInsensitiveSearch, range: Range<String.Index>(start:classString.startIndex, end: classString.endIndex), locale: nil)
@@ -137,12 +146,12 @@ extension NSManagedObject {
     //MARK: Fetching
     private class func createFetchRequest(context: NSManagedObjectContext) -> NSFetchRequest {
         let request = NSFetchRequest()
-        request.entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context)
+        request.entity = NSEntityDescription.entityForName(entityName!, inManagedObjectContext: context)
         
         return request
     }
     
-    private class func fetch(condition: AnyObject!, context: NSManagedObjectContext, order: AnyObject!, limit: NSNumber!) -> Array<AnyObject>! {
+    private class func fetch(condition: AnyObject?, context: NSManagedObjectContext, order: AnyObject?, limit: Int?) -> Array<AnyObject>? {
         let request = createFetchRequest(context)
         
         if let localCondition: AnyObject = condition {
@@ -154,7 +163,7 @@ extension NSManagedObject {
         }
         
         if let localLimit = limit {
-            request.fetchLimit = localLimit.integerValue
+            request.fetchLimit = localLimit
         }
         
         return context.executeFetchRequest(request, error: nil)
@@ -171,7 +180,7 @@ extension NSManagedObject {
         return NSCompoundPredicate.andPredicateWithSubpredicates(subpredicates)
     }
     
-    private class func predicateFromObject(condition: AnyObject, arguments: AnyObject...) -> NSPredicate! {
+    private class func predicateFromObject(condition: AnyObject, arguments: AnyObject...) -> NSPredicate? {
         if condition is NSPredicate {
             return condition as? NSPredicate
         } else if condition is String {
@@ -199,29 +208,29 @@ extension NSManagedObject {
         return sortDescriptorFromDictionary([key : value])
     }
     
-    private class func sortDescriptorFromObject(order: AnyObject) -> NSSortDescriptor! {
+    private class func sortDescriptorFromObject(order: AnyObject) -> NSSortDescriptor? {
         if order is NSSortDescriptor {
             return order as NSSortDescriptor
         } else if order is String {
             return sortDescriptorFromString(order as String)
         } else if order is Dictionary<String, String> {
             return sortDescriptorFromDictionary(order as Dictionary<String, String>)
+        } else {
+            return nil;
         }
-        
-        return nil;
     }
     
     private class func sortDescriptiorsFromObject(order: AnyObject) -> Array<NSSortDescriptor> {
         if order is NSString {
-            return [sortDescriptorFromObject(order.componentsSeparatedByString(","))]
+            return [sortDescriptorFromObject(order.componentsSeparatedByString(","))!]
         } else if order is Array<AnyObject> {
             var a = order as Array<AnyObject>
             a.map {(object) -> NSSortDescriptor in
-                return self.sortDescriptorFromObject(object)
+                return self.sortDescriptorFromObject(object)!
             }
         }
         
-        return [sortDescriptorFromObject(order)]
+        return [sortDescriptorFromObject(order)!]
     }
     
     //MARK: Counting
@@ -241,7 +250,7 @@ extension NSManagedObject {
                 var error: NSError?
                 result = context.save(&error)
                 if let localError = error {
-                    NSLog("[SwiftRecord] Unresolved error in saving context: \(localError), \(localError.userInfo)")
+                    println("[SwiftRecord] Unresolved error in saving context: \(localError), \(localError.userInfo)")
                 }
             }
         }
@@ -251,7 +260,7 @@ extension NSManagedObject {
     
     //MARK: Updating
     private class func transformProperties(properties: Dictionary<String, AnyObject>, object: NSManagedObject, context: NSManagedObjectContext) -> Dictionary<String, AnyObject> {
-        let entity = NSEntityDescription.entityForName(self.entityName, inManagedObjectContext: context)
+        let entity = NSEntityDescription.entityForName(entityName!, inManagedObjectContext: context)
         
         let attributes = entity?.attributesByName
         let relationships = entity?.relationshipsByName

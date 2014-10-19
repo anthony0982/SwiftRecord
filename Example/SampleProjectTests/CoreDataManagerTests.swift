@@ -59,16 +59,16 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     func testCoreDataManagerReset() {
-        let managedObjectContextA = CoreDataManager.manager.managedObjectContext
-        let persistentStoreCoordinatorA = CoreDataManager.manager.persistentStoreCoordinator
+        let managedObjectContextA = CoreDataManager.manager.managedObjectContext!
+        let persistentStoreCoordinatorA = CoreDataManager.manager.persistentStoreCoordinator!
         
         XCTAssertNotNil(managedObjectContextA, "should not be nil")
         XCTAssertNotNil(persistentStoreCoordinatorA, "should not be nil")
         
         CoreDataManager.manager.deleteStoreAndResetManager()
         
-        let managedObjectContextB = CoreDataManager.manager.managedObjectContext
-        let persistentStoreCoordinatorB = CoreDataManager.manager.persistentStoreCoordinator
+        let managedObjectContextB = CoreDataManager.manager.managedObjectContext!
+        let persistentStoreCoordinatorB = CoreDataManager.manager.persistentStoreCoordinator!
         
         XCTAssertNotNil(managedObjectContextB, "should not be nil")
         XCTAssertNotNil(persistentStoreCoordinatorB, "should not be nil")
