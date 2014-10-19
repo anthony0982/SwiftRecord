@@ -210,7 +210,7 @@ extension NSManagedObject {
     
     private class func sortDescriptorFromObject(order: AnyObject) -> NSSortDescriptor? {
         if order is NSSortDescriptor {
-            return order as NSSortDescriptor
+            return order as? NSSortDescriptor
         } else if order is String {
             return sortDescriptorFromString(order as String)
         } else if order is Dictionary<String, String> {
