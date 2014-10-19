@@ -31,7 +31,7 @@
 import Foundation
 import CoreData
 
-public class CoreDataManager: NSObject {
+public class CoreDataManager: Equatable {
     
     public class var manager: CoreDataManager {
         struct Static {
@@ -154,4 +154,9 @@ public class CoreDataManager: NSObject {
             NSFileManager.defaultManager().createDirectoryAtURL(url, withIntermediateDirectories: true, attributes: nil, error: nil)
         }
     }
+
+}
+
+public func == (lhs: CoreDataManager, rhs: CoreDataManager) -> Bool {
+    return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
 }

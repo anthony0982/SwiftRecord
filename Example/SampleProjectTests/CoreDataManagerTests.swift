@@ -92,7 +92,7 @@ class CoreDataManagerTests: XCTestCase {
         let store = CoreDataManager.manager.persistentStoreCoordinator!.persistentStores[0] as NSPersistentStore
         XCTAssert(store.type == NSSQLiteStoreType, "store should be NSSQLiteStoreType based")
     }
-
+    
     func testCreateMemoryBasedPersistentStoreCoordinator() {
         CoreDataManager.manager.useInMemoryStore()
         
