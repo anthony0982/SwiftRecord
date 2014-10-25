@@ -40,7 +40,7 @@ class CoreDataManagerTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        CoreDataManager.manager.deleteStoreAndResetManager()
+        CoreDataManager.manager.reset()
     }
     
     func testCoreDataManagerGetManager() {
@@ -65,7 +65,7 @@ class CoreDataManagerTests: XCTestCase {
         XCTAssertNotNil(managedObjectContextA, "should not be nil")
         XCTAssertNotNil(persistentStoreCoordinatorA, "should not be nil")
         
-        CoreDataManager.manager.deleteStoreAndResetManager()
+        CoreDataManager.manager.reset()
         
         let managedObjectContextB = CoreDataManager.manager.managedObjectContext!
         let persistentStoreCoordinatorB = CoreDataManager.manager.persistentStoreCoordinator!

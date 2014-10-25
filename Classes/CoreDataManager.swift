@@ -57,7 +57,7 @@ public class CoreDataManager: Equatable {
     }()
     
     //MARK: - Public Functions
-    public func deleteStoreAndResetManager() {
+    public func reset() {
         NSFileManager.defaultManager().removeItemAtURL(self.sqliteStoreURL, error: nil)
         #if DEBUG
             println("[SwiftRecord] Removed SQL store at \(self.sqliteStoreURL)")

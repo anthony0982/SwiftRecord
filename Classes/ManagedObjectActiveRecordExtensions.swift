@@ -97,16 +97,34 @@ extension NSManagedObject {
 //    }
     
     //MARK: Where
-//    public class func where(condition: AnyObject, inContext: NSManagedObjectContext, order: AnyObject, limit: Int) -> Array<AnyObject>! {
-//        return fetch
-//    }
-    
-    /*
-
-    + (NSArray *)where:(id)condition inContext:(NSManagedObjectContext *)context order:(id)order limit:(NSNumber *)limit {
-    return [self fetchWithCondition:condition inContext:context withOrder:order fetchLimit:limit];
+    public class func whereCondition(condition: AnyObject, order: AnyObject) -> Array<AnyObject>? {
+        return fetch(condition, context: NSManagedObjectContext.defaultContext, order: order, limit: nil)
     }
-*/
+    
+    public class func whereCondition(condition: AnyObject, limit: Int) -> Array<AnyObject>? {
+        return fetch(condition, context: NSManagedObjectContext.defaultContext, order: nil, limit: limit)
+    }
+    
+    public class func whereCondition(condition: AnyObject, order: AnyObject, limit: Int) -> Array<AnyObject>? {
+        return fetch(condition, context: NSManagedObjectContext.defaultContext, order: order, limit: limit)
+    }
+    
+    public class func whereCondition(condition: AnyObject, context: NSManagedObjectContext) -> Array<AnyObject>? {
+        return fetch(condition, context: context, order: nil, limit: nil)
+    }
+    
+    public class func whereCondition(condition: AnyObject, context: NSManagedObjectContext, order: AnyObject) -> Array<AnyObject>? {
+        return fetch(condition, context: context, order: order, limit: nil)
+    }
+    
+    public class func whereCondition(condition: AnyObject, context: NSManagedObjectContext, limit: Int) -> Array<AnyObject>? {
+        return fetch(condition, context: context, order: nil, limit: limit)
+    }
+    
+    public class func whereCondition(condition: AnyObject, context: NSManagedObjectContext, order: AnyObject, limit: Int) -> Array<AnyObject>? {
+        return fetch(condition, context: context, order: order, limit: limit)
+    }
+
     //MARK: Count
     public class func count() -> Int {
         return countInContext(NSManagedObjectContext.defaultContext)
