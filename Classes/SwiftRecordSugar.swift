@@ -1,6 +1,8 @@
 //
-// SwiftRecordUtilsTests.swift
+// SwiftRecordSugar.swift
 // SwiftRecord
+//
+// The MIT License (MIT)
 //
 // Copyright (c) 2014 Damien Glancy <damien.glancy@icloud.com>
 //
@@ -26,34 +28,19 @@
 // Marin Usalj (https://github.com/supermarin/ObjectiveRecord)
 //
 
-import XCTest
-import CoreData
-import SampleProject
+import Foundation
 
-class SwiftRecordUtilsTests: XCTestCase {
-
-    //MARK: - Setup & TearDown functions
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+public func unless<L: BooleanType>(predicate: L, block: ()->()) {
+    if !predicate {
+        block()
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+}
 
-    //MARK: - Tests
-
-    func testUnless() {
-        let expectation = expectationWithDescription("unless block is called")
+extension String {
+    func camelCase() -> String {
+        let spaced = stringByReplacingOccurrencesOfString("_", withString: " ")
+        let capitalized = spaced.capitalizedString
         
-        unless(0 > 1) {
-            expectation.fulfill()
-        }
-        
-        waitForExpectationsWithTimeout(10, handler: nil)
+        return capitalizedString.stringByReplacingOccurrencesOfString(" ", withString: "")
     }
-    
 }

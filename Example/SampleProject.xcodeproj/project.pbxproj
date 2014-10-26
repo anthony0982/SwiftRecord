@@ -15,10 +15,10 @@
 		3DC889E619F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E119F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift */; };
 		3DC889E719F2DBDC00891750 /* ManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E219F2DBDC00891750 /* ManagedObjectContextExtensions.swift */; };
 		3DC889E819F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E319F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift */; };
-		3DC889E919F2DBDC00891750 /* SwiftRecordUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E419F2DBDC00891750 /* SwiftRecordUtils.swift */; };
+		3DC889E919F2DBDC00891750 /* SwiftRecordSugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889E419F2DBDC00891750 /* SwiftRecordSugar.swift */; };
 		3DC889EE19F2DBED00891750 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */; };
 		3DC889EF19F2DBED00891750 /* FindersAndCreatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */; };
-		3DC889F019F2DBED00891750 /* SwiftRecordUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */; };
+		3DC889F019F2DBED00891750 /* SwiftRecordSugarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889ED19F2DBED00891750 /* SwiftRecordSugarTests.swift */; };
 		3DC889F619F2DC2B00891750 /* SampleProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889F419F2DC2B00891750 /* SampleProject.xcdatamodeld */; };
 		3DC889F719F2DDA000891750 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889F219F2DC1000891750 /* Person.swift */; };
 /* End PBXBuildFile section */
@@ -46,11 +46,11 @@
 		3DC889E119F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectActiveRecordExtensions.swift; sourceTree = "<group>"; };
 		3DC889E219F2DBDC00891750 /* ManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		3DC889E319F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectMappingsExtensions.swift; sourceTree = "<group>"; };
-		3DC889E419F2DBDC00891750 /* SwiftRecordUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordUtils.swift; sourceTree = "<group>"; };
+		3DC889E419F2DBDC00891750 /* SwiftRecordSugar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordSugar.swift; sourceTree = "<group>"; };
 		3DC889EA19F2DBED00891750 /* SampleProjectTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleProjectTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindersAndCreatorsTests.swift; sourceTree = "<group>"; };
-		3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordUtilsTests.swift; sourceTree = "<group>"; };
+		3DC889ED19F2DBED00891750 /* SwiftRecordSugarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordSugarTests.swift; sourceTree = "<group>"; };
 		3DC889F219F2DC1000891750 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3DC889F519F2DC2B00891750 /* SampleProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleProject.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +119,7 @@
 			children = (
 				3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */,
 				3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */,
-				3DC889ED19F2DBED00891750 /* SwiftRecordUtilsTests.swift */,
+				3DC889ED19F2DBED00891750 /* SwiftRecordSugarTests.swift */,
 				3DC889EA19F2DBED00891750 /* SampleProjectTests-Bridging-Header.h */,
 				3DC889C819F2DB8200891750 /* Supporting Files */,
 			);
@@ -141,7 +141,7 @@
 				3DC889E119F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift */,
 				3DC889E219F2DBDC00891750 /* ManagedObjectContextExtensions.swift */,
 				3DC889E319F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift */,
-				3DC889E419F2DBDC00891750 /* SwiftRecordUtils.swift */,
+				3DC889E419F2DBDC00891750 /* SwiftRecordSugar.swift */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -262,7 +262,7 @@
 				3DC889E619F2DBDC00891750 /* ManagedObjectActiveRecordExtensions.swift in Sources */,
 				3DC889F719F2DDA000891750 /* Person.swift in Sources */,
 				3DC889E819F2DBDC00891750 /* ManagedObjectMappingsExtensions.swift in Sources */,
-				3DC889E919F2DBDC00891750 /* SwiftRecordUtils.swift in Sources */,
+				3DC889E919F2DBDC00891750 /* SwiftRecordSugar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC889EF19F2DBED00891750 /* FindersAndCreatorsTests.swift in Sources */,
-				3DC889F019F2DBED00891750 /* SwiftRecordUtilsTests.swift in Sources */,
+				3DC889F019F2DBED00891750 /* SwiftRecordSugarTests.swift in Sources */,
 				3DC889EE19F2DBED00891750 /* CoreDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

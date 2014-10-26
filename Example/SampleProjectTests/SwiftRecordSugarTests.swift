@@ -1,8 +1,6 @@
 //
-// SwiftRecordUtils.swift
+// SwiftRecordUtilsTests.swift
 // SwiftRecord
-//
-// The MIT License (MIT)
 //
 // Copyright (c) 2014 Damien Glancy <damien.glancy@icloud.com>
 //
@@ -28,10 +26,36 @@
 // Marin Usalj (https://github.com/supermarin/ObjectiveRecord)
 //
 
-import Foundation
+import XCTest
+import CoreData
+import SampleProject
 
-public func unless<L: BooleanType>(predicate: L, block: ()->()) {
-    if !predicate {
-        block()
+class SwiftRecordUtilsTests: XCTestCase {
+
+    //MARK: - Setup & TearDown functions
+    
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+
+    //MARK: - Tests
+
+    func testUnless() {
+        let expectation = expectationWithDescription("unless block is called")
+        
+        unless(0 > 1) {
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(10, handler: nil)
+    }
+    
+    
+    
 }
