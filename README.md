@@ -37,10 +37,14 @@ let johnDoe = Person.find("name == 'John' AND surename == 'Doe'") as? Person
 #### Order and Limit
 
 ```` swift
+// People by their last name ascending
+var sortedPeople = Person.allWithOrder("surname")
+
+// People named John by their last name Z to A
+var reversedPeople = Person.where(["name" : "John"], order: ["surname" : "DESC"])
+
 // Just the first 5 people named John sorted by last name
-var fivePeople = Person.where("name == 'John'",
-                              order:["surname" : "ASC"],
-                              limit:5);
+var fivePeople = Person.where("name == 'John'", order:["surname" : "ASC"], limit:5)
 ````
 
 #### Reset
