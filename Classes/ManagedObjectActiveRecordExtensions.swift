@@ -33,17 +33,17 @@ import CoreData
 
 extension NSManagedObject {
     //MARK: - Create
-    public class func create() -> AnyObject? {
+    public class func create() -> AnyObject {
         return createInContext(NSManagedObjectContext.defaultContext)
     }
     
-    public class func createInContext(context: NSManagedObjectContext) -> AnyObject? {
+    public class func createInContext(context: NSManagedObjectContext) -> AnyObject {
         return NSEntityDescription.insertNewObjectForEntityForName(self.entityName!, inManagedObjectContext: context)
     }
     
     public class func create(attributes: Dictionary<String, AnyObject>!, context: NSManagedObjectContext) -> AnyObject? {
         if let localAttributes = attributes {
-            let entity: AnyObject = createInContext(context)!
+            let entity: AnyObject = createInContext(context)
             //TODO
             
             return entity

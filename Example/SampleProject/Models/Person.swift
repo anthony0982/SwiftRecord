@@ -32,8 +32,7 @@ import Foundation
 import CoreData
 
 public class Person: NSManagedObject {
-
-    @NSManaged var name: String
-    @NSManaged var dateOfBirth: NSDate
     
+    @NSManaged public var name: String
+    @NSManaged public var dateOfBirth: NSDate
 }

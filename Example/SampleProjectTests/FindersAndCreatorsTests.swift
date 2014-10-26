@@ -108,10 +108,13 @@ class FindersAndCreatorsTests: XCTestCase {
     }
     
     func testDeleteAll() {
+        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
+        createSomePeople()
+        XCTAssert(Person.all()!.count == 10, "count should be 10 not \(Person.all()!.count)")
+        
         Person.deleteAll()
         
-        let results = Person.all()
-        XCTAssertNotNil(results, "results should not be nil")
+        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
     }
     
     func testCount() {
@@ -119,6 +122,97 @@ class FindersAndCreatorsTests: XCTestCase {
         
         XCTAssertNotNil(count, "count should not be nil")
         XCTAssert(count == 0, "count should be zero")
+    }
+    
+    func testWhereContextOrderLimit() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+
+        let results = Person.whereCondition("name == 'John'", context: NSManagedObjectContext.defaultContext, order: ["name" : "ASC"], limit: 999)
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
+    }
+    
+    func testWhereContextOrder() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'John'", context: NSManagedObjectContext.defaultContext, order: ["name" : "ASC"])
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
+    }
+    
+    func testWhereContextLimit() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'John'", context: NSManagedObjectContext.defaultContext, limit: 999)
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
+    }
+    
+    func testWhereContext() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'John'", context: NSManagedObjectContext.defaultContext)
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
+    }
+    
+    func testWhereOrderLimit() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'John'", order: ["name" : "ASC"], limit: 999)
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
+    }
+
+    func testWhereLimit() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'John'", context: NSManagedObjectContext.defaultContext, limit: 999)
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
+    }
+    
+    func testWhereOrder() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'John'", order: ["name" : "ASC"])
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
+        
+        let resultPerson = results![0] as Person
+        XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
     }
     
     //MARK: - Private functions
