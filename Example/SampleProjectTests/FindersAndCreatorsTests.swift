@@ -40,7 +40,7 @@ class FindersAndCreatorsTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        CoreDataManager.manager.reset()
         super.tearDown()
     }
         
@@ -51,6 +51,12 @@ class FindersAndCreatorsTests: XCTestCase {
     func testGetDefaultManagedObjectContextViaExtension() {
         let context = NSManagedObjectContext.defaultContext
         XCTAssertNotNil(context, "context should not be nil")
+    }
+    
+    func testCreateSomePeople() {
+        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
+        createSomePeople()
+        XCTAssert(Person.all()!.count == 10, "count should be 10 not \(Person.all()!.count)")
     }
     
     func testCreateEntity() {
@@ -90,7 +96,15 @@ class FindersAndCreatorsTests: XCTestCase {
     
     func testEntityAll() {
         let results = Person.all()
-        XCTAssertNotNil(results, "results should not be nil")
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 0, "all count should be zero")
+        
+        let entity = Person.create() as Person
+        entity.save()
+        
+        let results2 = Person.all()
+        XCTAssertNotNil(results2!, "results should not be nil")
+        XCTAssert(results2!.count == 1, "all count should be 1 not \(results2!.count)")
     }
     
     func testDeleteAll() {
@@ -105,5 +119,14 @@ class FindersAndCreatorsTests: XCTestCase {
         
         XCTAssertNotNil(count, "count should not be nil")
         XCTAssert(count == 0, "count should be zero")
+    }
+    
+    //MARK: - Private functions
+    
+    private func createSomePeople() {
+        for var count = 0; count < 10; count++ {
+            let entity = Person.create() as Person
+            entity.save()
+        }
     }
 }

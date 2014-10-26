@@ -15,11 +15,18 @@ Its easy to get up and running with no AppDelegate code required. Fully tested u
 #### Create / Save / Delete
 
 ``` swift
-var john = Person.create()
+var john = Person.create() as Person
 john.name = "John"
 john.save()
 john.delete()
+```
 
+#### Reset
+
+Reset the core data context
+
+``` swift
+CoreDataManager.manager.reset()
 ```
 
 #### Origins

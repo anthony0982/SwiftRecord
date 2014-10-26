@@ -39,8 +39,8 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         CoreDataManager.manager.reset()
+        super.tearDown()
     }
     
     func testCoreDataManagerGetManager() {
