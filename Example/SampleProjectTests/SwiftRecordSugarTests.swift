@@ -1,5 +1,5 @@
 //
-// SwiftRecordUtilsTests.swift
+// SwiftRecordSugarTests.swift
 // SwiftRecord
 //
 // Copyright (c) 2014 Damien Glancy <damien.glancy@icloud.com>
@@ -30,7 +30,7 @@ import XCTest
 import CoreData
 import SampleProject
 
-class SwiftRecordUtilsTests: XCTestCase {
+class SwiftRecordSugarTests: XCTestCase {
 
     //MARK: - Setup & TearDown functions
     
@@ -47,7 +47,7 @@ class SwiftRecordUtilsTests: XCTestCase {
     //MARK: - Tests
 
     func testUnless() {
-        let expectation = expectationWithDescription("unless block is called")
+        let expectation = expectationWithDescription("unless block should be called called")
         
         unless(0 > 1) {
             expectation.fulfill()
@@ -56,6 +56,9 @@ class SwiftRecordUtilsTests: XCTestCase {
         waitForExpectationsWithTimeout(10, handler: nil)
     }
     
-    
+    func testStringCamelCase() {
+        let snakeCase = "snake_case_string"
+        XCTAssert(snakeCase.camelCase() == "SnakeCaseString", "camel case should not be \(snakeCase.camelCase())")
+    }
     
 }

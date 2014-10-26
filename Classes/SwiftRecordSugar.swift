@@ -37,10 +37,8 @@ public func unless<L: BooleanType>(predicate: L, block: ()->()) {
 }
 
 extension String {
-    func camelCase() -> String {
+    public func camelCase() -> String {
         let spaced = stringByReplacingOccurrencesOfString("_", withString: " ")
-        let capitalized = spaced.capitalizedString
-        
-        return capitalizedString.stringByReplacingOccurrencesOfString(" ", withString: "")
+        return spaced.capitalizedString.stringByReplacingOccurrencesOfString(" ", withString: "")
     }
 }
