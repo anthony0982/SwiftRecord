@@ -33,7 +33,9 @@ import CoreData
 import SampleProject
 
 class FindersAndCreatorsTests: XCTestCase {
-
+    
+    //MARK: - Setup & TearDown functions
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -43,7 +45,9 @@ class FindersAndCreatorsTests: XCTestCase {
         CoreDataManager.manager.reset()
         super.tearDown()
     }
-        
+    
+    //MARK: - Create tests
+    
     func testEntityName() {
         XCTAssert(Person.entityName == "Person", "entity should be named entity, not \(Person.entityName)")
     }
@@ -63,7 +67,7 @@ class FindersAndCreatorsTests: XCTestCase {
         let entity = Person.create() as Person
         XCTAssertNotNil(entity, "entity should not be nil")
     }
-
+    
     func testCreateEntityUsingSuppliedContext() {
         let context = NSManagedObjectContext.defaultContext
         XCTAssertNotNil(context, "context should not be nil")
@@ -71,6 +75,8 @@ class FindersAndCreatorsTests: XCTestCase {
         let entity = Person.createInContext(context) as Person
         XCTAssertNotNil(entity, "entity should not be nil")
     }
+    
+    //MARK: - Save tests
     
     func testSaveEntity() {
         let entity = Person.create() as Person
@@ -81,6 +87,8 @@ class FindersAndCreatorsTests: XCTestCase {
         XCTAssertTrue(result, "save result should be true (successful)")
         XCTAssertFalse(entity.hasChanges, "entity should now longer have changes")
     }
+    
+    //MARK: - Delete tests
     
     func testDeleteEntity() {
         let entity = Person.create() as Person
@@ -93,6 +101,18 @@ class FindersAndCreatorsTests: XCTestCase {
         entity.delete()
         XCTAssertTrue(entity.deleted, "entity should be marked as deleted")
     }
+    
+    func testDeleteAll() {
+        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
+        createSomePeople()
+        XCTAssert(Person.all()!.count == 10, "count should be 10 not \(Person.all()!.count)")
+        
+        Person.deleteAll()
+        
+        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
+    }
+    
+    //MARK: - All tests
     
     func testEntityAll() {
         let results = Person.all()
@@ -107,15 +127,7 @@ class FindersAndCreatorsTests: XCTestCase {
         XCTAssert(results2!.count == 1, "all count should be 1 not \(results2!.count)")
     }
     
-    func testDeleteAll() {
-        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
-        createSomePeople()
-        XCTAssert(Person.all()!.count == 10, "count should be 10 not \(Person.all()!.count)")
-        
-        Person.deleteAll()
-        
-        XCTAssert(Person.all()!.count == 0, "count should be zero not \(Person.all()!.count)")
-    }
+    //MARK: - Count tests
     
     func testCount() {
         let count = Person.count()
@@ -124,11 +136,13 @@ class FindersAndCreatorsTests: XCTestCase {
         XCTAssert(count == 0, "count should be zero")
     }
     
+    //MARK: - Where tests
+    
     func testWhereContextOrderLimit() {
         let person = Person.create() as Person
         person.name = "John"
         person.save()
-
+        
         let results = Person.whereCondition("name == 'John'", context: NSManagedObjectContext.defaultContext, order: ["name" : "ASC"], limit: 999)
         XCTAssertNotNil(results!, "results should not be nil")
         XCTAssert(results!.count == 1, "count should be 1 not \(results!.count)")
@@ -188,7 +202,7 @@ class FindersAndCreatorsTests: XCTestCase {
         let resultPerson = results![0] as Person
         XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
     }
-
+    
     func testWhereLimit() {
         let person = Person.create() as Person
         person.name = "John"
@@ -214,6 +228,8 @@ class FindersAndCreatorsTests: XCTestCase {
         let resultPerson = results![0] as Person
         XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
     }
+    
+    //MARK: - Find tests
     
     //MARK: - Private functions
     

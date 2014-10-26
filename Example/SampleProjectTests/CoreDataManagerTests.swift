@@ -34,6 +34,8 @@ import SampleProject
 
 class CoreDataManagerTests: XCTestCase {
     
+    //MARK: - Setup & TearDown functions
+    
     override func setUp() {
         super.setUp()
     }
@@ -42,6 +44,8 @@ class CoreDataManagerTests: XCTestCase {
         CoreDataManager.manager.reset()
         super.tearDown()
     }
+    
+    //MARK: - Get Manager & Singleton tests
     
     func testCoreDataManagerGetManager() {
         let instance = CoreDataManager.manager
@@ -57,6 +61,8 @@ class CoreDataManagerTests: XCTestCase {
         
         XCTAssertEqual(instance, instanceB, "instances should be identical as per singleton pattern")
     }
+    
+    //MARK: - Reset tests
     
     func testCoreDataManagerReset() {
         let managedObjectContextA = CoreDataManager.manager.managedObjectContext!
@@ -77,6 +83,8 @@ class CoreDataManagerTests: XCTestCase {
         XCTAssertNotEqual(persistentStoreCoordinatorA, persistentStoreCoordinatorB, "stores should not be equal after a reset")
     }
     
+    //MARK: - Manager property tests
+    
     func testManagedObjectModelIsNotNil() {
         let managedObjectModel = CoreDataManager.manager.managedObjectModel!
         XCTAssertNotNil(managedObjectModel, "managedObjectModel should not be nil")
@@ -87,6 +95,13 @@ class CoreDataManagerTests: XCTestCase {
         XCTAssertNotNil(coordinator, "persistentStoreCoordinator should not be nil")
         XCTAssertTrue(coordinator.persistentStores.count > 0, "should have at least 1 persistent store")
     }
+    
+    func testHasAManagedObjectContext() {
+        let context = CoreDataManager.manager.managedObjectContext!
+        XCTAssertNotNil(context, "context should not be nil")
+    }
+    
+    //MARK: - Persistent Store tests
     
     func testCreateDiskBasedPersistentStoreCoordinator() {
         let store = CoreDataManager.manager.persistentStoreCoordinator!.persistentStores[0] as NSPersistentStore
@@ -100,8 +115,4 @@ class CoreDataManagerTests: XCTestCase {
         XCTAssert(store.type == NSInMemoryStoreType, "store should be NSInMemoryStoreType based")
     }
     
-    func testHasAManagedObjectContext() {
-        let context = CoreDataManager.manager.managedObjectContext!
-        XCTAssertNotNil(context, "context should not be nil")
-    }
 }
