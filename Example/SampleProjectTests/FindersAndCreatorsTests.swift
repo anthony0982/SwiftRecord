@@ -254,6 +254,35 @@ class FindersAndCreatorsTests: XCTestCase {
     
     //MARK: - Find tests
     
+    func testFind() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let foundPerson = Person.find("name == 'John'") as Person
+        XCTAssertNotNil(foundPerson, "foundPerson should not be nil")
+        XCTAssert(foundPerson.name == "John", "name should be John not \(foundPerson.name)")
+    }
+    
+    func testFindContext() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let foundPerson = Person.find("name == 'John'", context: NSManagedObjectContext.defaultContext) as Person
+        XCTAssertNotNil(foundPerson, "foundPerson should not be nil")
+        XCTAssert(foundPerson.name == "John", "name should be John not \(foundPerson.name)")
+    }
+    
+    func testFindWhereNothingWillBeFound() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let foundPerson = Person.find("name == 'Macintosh'") as? Person
+        XCTAssertNil(foundPerson, "foundPerson should be nil")
+    }
+    
     //MARK: - Private functions
     
     private func createSomePeople() {

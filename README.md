@@ -31,7 +31,7 @@ let people = Person.all()
 let johns = Person.where("name == 'John'")
 
 // And of course, John Doe!
-let johnDoe = Person.find("name == 'John' AND surename == 'Doe'") as Person
+let johnDoe = Person.find("name == 'John' AND surename == 'Doe'") as? Person
 ````
 
 #### Reset

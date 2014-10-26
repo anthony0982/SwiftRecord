@@ -90,11 +90,6 @@ extension NSManagedObject {
     public class func allInContext(context: NSManagedObjectContext, order: AnyObject!) -> Array<AnyObject>? {
         return fetch(nil, context: context, order: order, limit: nil)
     }
-
-    //MARK: Find
-//    public class func find(conditions: AnyObject..) -> AnyObject {
-//        
-//    }
     
     //MARK: Where
     public class func whereCondition(condition: AnyObject) -> Array<AnyObject>? {
@@ -128,7 +123,20 @@ extension NSManagedObject {
     public class func whereCondition(condition: AnyObject, context: NSManagedObjectContext, order: AnyObject, limit: Int) -> Array<AnyObject>? {
         return fetch(condition, context: context, order: order, limit: limit)
     }
-
+    
+    //MARK: Find
+    public class func find(condition: AnyObject) -> AnyObject? {
+        return find(condition, context: NSManagedObjectContext.defaultContext)
+    }
+    
+    public class func find(condition: AnyObject, context: NSManagedObjectContext) -> AnyObject? {
+        if let results = whereCondition(condition, context: context, limit: 1) {
+            return results.count == 1 ? results.first : nil
+        }
+        
+        return nil
+    }
+    
     //MARK: Count
     public class func count() -> Int {
         return countInContext(NSManagedObjectContext.defaultContext)
