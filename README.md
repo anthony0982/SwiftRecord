@@ -15,18 +15,42 @@ Its easy to get up and running with no AppDelegate code required. Fully tested u
 #### Create / Save / Delete
 
 ``` swift
-var john = Person.create() as Person
+let john = Person.create() as Person
 john.name = "John"
 john.save()
 john.delete()
 ```
 
+#### Finders
+
+```` swift
+// all Person entities from the database
+let people = Person.all()
+
+// Person entities with name John
+let johns = Person.where("name == 'John'")
+
+// And of course, John Doe!
+let johnDoe = Person.where
+Person *johnDoe = [Person find:@"name == %@ AND surname == %@", @"John", @"Doe"];
+````
+
 #### Reset
 
-Reset the core data context
+Reset the core data context, persistent data store and remove the sqllite database (if being used). Reset is helpful if you wish to completely remove the core data stack, for example, when a user logs out of your application.
+
+This function shoud be used with caution as you have to make sure that there are no existing Managed Objects being referenced.
 
 ``` swift
 CoreDataManager.manager.reset()
+```
+
+#### Testing
+
+SwiftRecord supports Core Data's in-memory store. In any place, before your tests start running, its enough to call:
+
+``` swift
+CoreDataManager.manager.useInMemoryStore()
 ```
 
 #### Origins

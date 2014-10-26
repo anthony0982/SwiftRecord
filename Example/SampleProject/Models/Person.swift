@@ -34,5 +34,6 @@ import CoreData
 public class Person: NSManagedObject {
     
     @NSManaged public var name: String
+    @NSManaged public var surname: String
     @NSManaged public var dateOfBirth: NSDate
 }
