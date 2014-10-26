@@ -97,6 +97,10 @@ extension NSManagedObject {
 //    }
     
     //MARK: Where
+    public class func whereCondition(condition: AnyObject) -> Array<AnyObject>? {
+        return fetch(condition, context: NSManagedObjectContext.defaultContext, order: nil, limit: nil)
+    }
+    
     public class func whereCondition(condition: AnyObject, order: AnyObject) -> Array<AnyObject>? {
         return fetch(condition, context: NSManagedObjectContext.defaultContext, order: order, limit: nil)
     }
