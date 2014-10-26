@@ -32,10 +32,19 @@ import Foundation
 import CoreData
 
 extension NSManagedObject {
+
+    private struct SharedMappingsStruct {
+        static var staticVariable: Dictionary<String, AnyObject> = {
+            return Dictionary<String, AnyObject>()
+            }()
+    }
     
-//    public class var sharedMappings: Dictionary<String, AnyObject> = {
-//        return Dictionary<String, AnyObject>()
-//    }()
+     public class var sharedMappings: Dictionary<String, AnyObject> {
+        get {
+            return SharedMappingsStruct.staticVariable
+        }
+//        set { SharedMappingsStruct.staticVariable = newValue }
+    }
     
     public class func mappings() -> Dictionary<String, AnyObject>! {
         return nil
