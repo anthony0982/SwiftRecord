@@ -92,8 +92,12 @@ extension NSManagedObject {
     }
     
     //MARK: Where
-    public class func whereCondition(condition: AnyObject) -> Array<AnyObject>? {
-        return fetch(condition, context: NSManagedObjectContext.defaultContext, order: nil, limit: nil)
+    public class func whereCondition(condition: AnyObject, arguments: AnyObject...) -> Array<AnyObject>? {
+        if let predicate = predicateFromObject(condition, arguments: arguments) {
+            return whereCondition(predicate, context: NSManagedObjectContext.defaultContext)
+        }
+        
+        return nil
     }
     
     public class func whereCondition(condition: AnyObject, order: AnyObject) -> Array<AnyObject>? {
@@ -214,7 +218,7 @@ extension NSManagedObject {
         if condition is NSPredicate {
             return condition as? NSPredicate
         } else if condition is String {
-            return NSPredicate(format: condition as String, [arguments])
+            return NSPredicate(format: condition as String, arguments)
         } else if condition is NSDictionary {
             return predicateFromDictionary(condition as Dictionary)
         }

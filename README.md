@@ -25,13 +25,22 @@ john.delete()
 
 ```` swift
 // all Person entities from the database
-let people = Person.all()
+var people = Person.all()
 
 // Person entities with name John
-let johns = Person.where("name == 'John'")
+var johns = Person.where("name == 'John'")
 
 // And of course, John Doe!
 let johnDoe = Person.find("name == 'John' AND surename == 'Doe'") as? Person
+````
+
+#### Order and Limit
+
+```` swift
+// Just the first 5 people named John sorted by last name
+var fivePeople = Person.where("name == 'John'",
+                              order:["surname" : "ASC"],
+                              limit:5);
 ````
 
 #### Reset
