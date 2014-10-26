@@ -129,8 +129,12 @@ extension NSManagedObject {
     }
     
     //MARK: Find
-    public class func find(condition: AnyObject) -> AnyObject? {
-        return find(condition, context: NSManagedObjectContext.defaultContext)
+    public class func find(condition: AnyObject, arguments: AnyObject...) -> AnyObject? {
+        if let predicate = predicateFromObject(condition, arguments: arguments) {
+            return find(predicate, context: NSManagedObjectContext.defaultContext)
+        }
+        
+        return nil
     }
     
     public class func find(condition: AnyObject, context: NSManagedObjectContext) -> AnyObject? {
