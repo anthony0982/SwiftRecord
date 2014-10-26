@@ -242,6 +242,16 @@ class FindersAndCreatorsTests: XCTestCase {
         XCTAssert(resultPerson.name == "John", "name should be John not \(resultPerson.name)")
     }
     
+    func testWhereNothingWillBeFound() {
+        let person = Person.create() as Person
+        person.name = "John"
+        person.save()
+        
+        let results = Person.whereCondition("name == 'Macintosh'")
+        XCTAssertNotNil(results!, "results should not be nil")
+        XCTAssert(results!.count == 0, "count should be 0 not \(results!.count)")
+    }
+    
     //MARK: - Find tests
     
     //MARK: - Private functions
