@@ -21,6 +21,7 @@
 		3DC889F019F2DBED00891750 /* SwiftRecordSugarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889ED19F2DBED00891750 /* SwiftRecordSugarTests.swift */; };
 		3DC889F619F2DC2B00891750 /* SampleProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889F419F2DC2B00891750 /* SampleProject.xcdatamodeld */; };
 		3DC889F719F2DDA000891750 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC889F219F2DC1000891750 /* Person.swift */; };
+		3DF7406B19FFEE0900821535 /* MappingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7406A19FFEE0900821535 /* MappingsTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3DC889ED19F2DBED00891750 /* SwiftRecordSugarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRecordSugarTests.swift; sourceTree = "<group>"; };
 		3DC889F219F2DC1000891750 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3DC889F519F2DC2B00891750 /* SampleProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleProject.xcdatamodel; sourceTree = "<group>"; };
+		3DF7406A19FFEE0900821535 /* MappingsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingsTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				3DC889EB19F2DBED00891750 /* CoreDataManagerTests.swift */,
 				3DC889EC19F2DBED00891750 /* FindersAndCreatorsTests.swift */,
+				3DF7406A19FFEE0900821535 /* MappingsTest.swift */,
 				3DC889ED19F2DBED00891750 /* SwiftRecordSugarTests.swift */,
 				3DC889EA19F2DBED00891750 /* SampleProjectTests-Bridging-Header.h */,
 				3DC889C819F2DB8200891750 /* Supporting Files */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF7406B19FFEE0900821535 /* MappingsTest.swift in Sources */,
 				3DC889EF19F2DBED00891750 /* FindersAndCreatorsTests.swift in Sources */,
 				3DC889F019F2DBED00891750 /* SwiftRecordSugarTests.swift in Sources */,
 				3DC889EE19F2DBED00891750 /* CoreDataManagerTests.swift in Sources */,

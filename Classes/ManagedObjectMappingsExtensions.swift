@@ -33,20 +33,37 @@ import CoreData
 
 extension NSManagedObject {
 
-    private struct SharedMappingsStruct {
-        static var staticVariable: Dictionary<String, AnyObject> = {
-            return Dictionary<String, AnyObject>()
-            }()
-    }
-    
-     public class var sharedMappings: Dictionary<String, AnyObject> {
-        get {
-            return SharedMappingsStruct.staticVariable
-        }
-//        set { SharedMappingsStruct.staticVariable = newValue }
+    public class func keyForRemoteKey(remoteKey: String, context: NSManagedObjectContext) -> String {
+//        if ([cachedMappings][remoteKey] != nil) {
+//            return [cachedMappings][remoteKey]["key"]
+//        }
+        
+        return ""
     }
     
     public class func mappings() -> Dictionary<String, AnyObject>! {
         return nil
     }
+    
+    //MARK: - Private
+    private class var sharedMappings: Dictionary<NSObject, AnyObject> {
+        get {
+            return InternalSharedMappingsStruct.staticVariable
+        }
+    }
+
+    private class var cachedMappings: Dictionary<NSObject, AnyObject> {
+        get {
+            let cachedMappings = [sharedMappings : self]
+            
+            return cachedMappings
+        }
+    }
+    
+    private struct InternalSharedMappingsStruct {
+        static var staticVariable: Dictionary<NSObject, AnyObject> = {
+            return Dictionary<NSObject, AnyObject>()
+            }()
+    }
+
 }

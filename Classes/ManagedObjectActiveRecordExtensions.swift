@@ -41,7 +41,7 @@ extension NSManagedObject {
         return NSEntityDescription.insertNewObjectForEntityForName(self.entityName!, inManagedObjectContext: context)
     }
     
-    public class func create(attributes: Dictionary<String, AnyObject>!, context: NSManagedObjectContext) -> AnyObject? {
+    public class func create(attributes: Dictionary<String, AnyObject>?, context: NSManagedObjectContext) -> AnyObject? {
         if let localAttributes = attributes {
             let entity: AnyObject = createInContext(context)
             //TODO
@@ -53,8 +53,10 @@ extension NSManagedObject {
     }
     
     //MARK: - Update
-    public func update(attributes: Dictionary<String, AnyObject>) {
-        
+    public func update(attributes: Dictionary<String, AnyObject>?) {
+        if let localAttributes = attributes {
+            
+        }
     }
     
     //MARK: - Delete
@@ -306,7 +308,7 @@ extension NSManagedObject {
         var transformed = Dictionary<String, AnyObject>(minimumCapacity: properties.count)
         
         for key in properties {
-            
+            //TODO
         }
         
         return transformed
