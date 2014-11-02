@@ -321,8 +321,17 @@ extension NSManagedObject {
     }
     
     private func setSafeValue(value: AnyObject, key: String) {
+        var localValue: AnyObject = value
+        
         if let attribute: AnyObject = self.entity.attributesByName[key] as AnyObject! {
+            let attributeType = attribute.attributeType
             
+            if ((attributeType == NSAttributeType.StringAttributeType) && (value is NSNumber.Type)) {
+                localValue = value.stringValue
+            }
         }
+        
+        self.setPrimitiveValue(localValue, forKey: key)
     }
+    
 }
