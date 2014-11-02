@@ -324,14 +324,35 @@ extension NSManagedObject {
         var localValue: AnyObject = value
         
         if let attribute: AnyObject = self.entity.attributesByName[key] as AnyObject! {
-            let attributeType = attribute.attributeType
+            let attributeType = attribute.attributeType!
             
             if ((attributeType == NSAttributeType.StringAttributeType) && (value is NSNumber.Type)) {
                 localValue = value.stringValue
+            } else if (value is String) {
+                if (attributeType == NSAttributeType.Integer16AttributeType ||
+                    attributeType == NSAttributeType.Integer32AttributeType ||
+                    attributeType == NSAttributeType.Integer64AttributeType) {
+                        localValue = value.integerValue
+                } else if (attributeType == NSAttributeType.BooleanAttributeType) {
+                    localValue = value.boolValue
+                } else if (attributeType == NSAttributeType.FloatAttributeType) {
+                    localValue = value.floatValue
+                } else if (attributeType == NSAttributeType.DateAttributeType) {
+                    localValue = self.defaultFormatter().dateFromString(value as String)!
+                }
             }
         }
         
         self.setPrimitiveValue(localValue, forKey: key)
+    }
+    
+    private func defaultFormatter() -> NSDateFormatter {
+        
+        var token: dispatch_once_t = 0
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
+        
+        return formatter
     }
     
 }
