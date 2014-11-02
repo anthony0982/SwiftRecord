@@ -32,7 +32,7 @@ import Foundation
 import CoreData
 
 extension NSManagedObject {
-
+    
     public class func keyForRemoteKey(remoteKey: String, context: NSManagedObjectContext) -> String {
 //        if ([cachedMappings][remoteKey] != nil) {
 //            return [cachedMappings][remoteKey]["key"]

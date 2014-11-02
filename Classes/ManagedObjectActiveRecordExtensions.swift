@@ -44,7 +44,7 @@ extension NSManagedObject {
     public class func create(attributes: Dictionary<String, AnyObject>?, context: NSManagedObjectContext) -> AnyObject? {
         if let localAttributes = attributes {
             let entity: AnyObject = createInContext(context)
-            //TODO
+            entity.update(localAttributes)
             
             return entity
         }
@@ -55,7 +55,13 @@ extension NSManagedObject {
     //MARK: - Update
     public func update(attributes: Dictionary<String, AnyObject>?) {
         if let localAttributes = attributes {
+            let transformed = self.dynamicType.transformProperties(localAttributes, object: self, context: self.managedObjectContext!)
             
+            for (key, object) in transformed {
+                self.willChangeValueForKey(key)
+                self.setSafeValue(object, key: key)
+                self.didChangeValueForKey(key)
+            }
         }
     }
     
@@ -312,5 +318,11 @@ extension NSManagedObject {
         }
         
         return transformed
+    }
+    
+    private func setSafeValue(value: AnyObject, key: String) {
+        if let attribute: AnyObject = self.entity.attributesByName[key] as AnyObject! {
+            
+        }
     }
 }
