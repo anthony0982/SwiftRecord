@@ -313,7 +313,7 @@ extension NSManagedObject {
         
         var transformed = Dictionary<String, AnyObject>(minimumCapacity: properties.count)
         
-        for key in properties {
+        for (key, value) in properties {
             //TODO
         }
         
@@ -354,5 +354,4 @@ extension NSManagedObject {
         
         return formatter
     }
-    
 }
